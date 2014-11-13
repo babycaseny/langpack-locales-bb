@@ -1,31 +1,51 @@
-escape_char     /
-comment_char    %
+comment_char %
+escape_char /
 %
-% Babyish language locale for Babycasèny:
-% Address: Ist Steibol
-% Contact: Tom K. C. Chiu 
-% eMail:   tomchiukc@gmail.com>
-% Filename: bb_BK
-% Locale name: bb_BK.UTF-8
-% Language: Babyish
-% Language abbrieviation: bb
+% Babyish language locale for Babycaseny
+% Source: Babyish Standards Association
+% Address: G/F, 464 Fanling Village
+%   Fanling, Hong Kong.
+% Contact: Tom K. C. Chiu
+% Email: babycaseny@gmail.com
+% Tel: +852 9243-2512
+% Fax: --
+% Language: bb
+% Territory: BK
+% Revision: 0.2
+% Date: 2009-04-01
+% Application: general
+% Users: general
+% Repertoiremap: mnemonic.ds
+% Charset: BASKII
+% Distribution and use is free, also
+% for commercial purposes.
+
 % Charset: UTF-8
-% Creation Date: 2009-06-17
-% History:
-% June 2009: Defining bb locale
- 
+
+% ChangeLog
+% 0.2 (2009-04-01):
+%     2009-04-01 Tom K. C. Chiu <babycaseny@gmail.com>
+%       - correction of collating sequence
+% 0.1 (2008-11-15):
+%    - Initial Babyish locale by Tom K. C. Chiu
+% Corrections by:
+%   
+
 LC_IDENTIFICATION
-title      "Babyish locale"
-source     "Babycaseny Government"
-address    "Ist Steibol"
-contact    "Tom K. C. Chiu"
-email      "tomchiukc@gmail.com"
+title      "Babyish locale for Babycaseny"
+source     "Babyish Standards Association"
+address    ""
+contact "Tom K. C. Chiu"
+email    "babycaseny@gmail.com"
 tel        ""
 fax        ""
 language   "Babyish"
-territory  "Babycasèny, Hong Kong, Canada"
-revision   "1.0"
-date       "2000-07-20"
+territory  "Babycasèny"
+revision   "0.2"
+date       "2009-04-01"
+audience   ""
+application ""
+abbreviation ""
 %
 category  "bb_BK:2000";LC_IDENTIFICATION
 category  "bb_BK:2000";LC_CTYPE
@@ -35,10 +55,10 @@ category  "bb_BK:2000";LC_NUMERIC
 category  "bb_BK:2000";LC_MONETARY
 category  "bb_BK:2000";LC_MESSAGES
 category  "bb_BK:2000";LC_PAPER
+category  "bb_BK:2000";LC_MEASUREMENT
 category  "bb_BK:2000";LC_NAME
 category  "bb_BK:2000";LC_ADDRESS
 category  "bb_BK:2000";LC_TELEPHONE
-category  "bb_BK:2000";LC_MEASUREMENT
 
 END LC_IDENTIFICATION
 
@@ -46,207 +66,505 @@ LC_CTYPE
 copy "i18n"
 
 translit_start
+
 include "translit_combining";""
+
+% Babyish umlauts.
+% LATIN CAPITAL LETTER A WITH DIAERESIS.
+<U00C4> "<U0041><U0308>";"<U0041><U0045>"
+% LATIN CAPITAL LETTER O WITH DIAERESIS.
+<U00D6> "<U004F><U0308>";"<U004F><U0045>"
+% LATIN CAPITAL LETTER U WITH DIAERESIS.
+<U00DC> "<U0055><U0308>";"<U0055><U0045>"
+% LATIN SMALL LETTER A WITH DIAERESIS.
+<U00E4> "<U0061><U0308>";"<U0061><U0065>"
+% LATIN SMALL LETTER O WITH DIAERESIS.
+<U00F6> "<U006F><U0308>";"<U006F><U0065>"
+% LATIN SMALL LETTER U WITH DIAERESIS.
+<U00FC> "<U0075><U0308>";"<U0075><U0065>"
+
+% Danish.
+% LATIN CAPITAL LETTER A WITH RING ABOVE.
+<U00C5> "<U0041><U030A>";"<U0041><U0041>"
+% LATIN SMALL LETTER A WITH RING ABOVE.
+<U00E5> "<U0061><U030A>";"<U0061><U0061>"
+
 translit_end
+
 END LC_CTYPE
 
 LC_COLLATE
+define UPPERCASE_FIRST
 % Copy the template from ISO/IEC 14651
 copy "iso14651_t1"
 
-%% take out whole part for easier comparison
-%% copy "babyish_collate"
+collating-element <A-A> from "<U0041><U0041>"
+collating-element <A-a> from "<U0041><U0061>"
+collating-element <a-A> from "<U0061><U0041>"
+collating-element <a-a> from "<U0061><U0061>"
+collating-symbol <CAP-MIN>
+collating-symbol <MIN-CAP>
 
-% Characters list:
-% A a	Ä ä	B b	Ç ç	C c	Č č	Ĉ ĉ	D d	Đ đ	E e	F f	
-% G g	Gĥ gĥ	H h	Ĥ ĥ	I i	J j	K k	Kĥ kĥ	L l	M m	N n	Ŋ ŋ	
-% O o	Ö ö	P p	Q q	R r	Ř ř	Rĥ rĥ	S s	Š š	Ŝ ŝ	T t	
-% Ŧ ŧ	U u	Ü ü	V v	W w	X x	Y y	Z z	Ž ž	Ẑ ẑ	 
+collating-symbol <a-diaeresis>
+collating-symbol <c-cedilla>
+collating-symbol <ccaron>
+collating-symbol <ccirc>
+collating-symbol <d//>
+collating-symbol <hcirc>
+collating-symbol <ng>
+collating-symbol <o-diaeresis>
+collating-symbol <rcaron>
+collating-symbol <scaron>
+collating-symbol <scirc>
+collating-symbol <t//>
+collating-symbol <u-diaeresis>
+collating-symbol <zcaron>
+collating-symbol <zcirc>
+% Tsukikoish
+collating-symbol <gcirc>
+% Danish
+collating-symbol <ae>
+collating-symbol <o-stroke>
+collating-symbol <a-ring>
+collating-symbol <ETH>
 
-reorder-after <BAS>
-<MAC>	% macron
-<ACA>	% acute
-<CAR>	% caron
-<GRA>	% grave
+reorder-after <RES-1>
+<CAP>
+<CAP-MIN>
+<MIN-CAP>
 
-#
-reorder-after <U0061> % a
-<U00E4> <ae>;<BAS>;<MIN>;IGNORE # 204 ä
-<U01DF> <ae>;<MAC>;<MIN>;IGNORE # 210 ǟ
-#
-reorder-after <U0041> % A
-<U00C4> <ae>;<BAS>;<CAP>;IGNORE # 522 Ä
-<U01DE> <ae>;<MAC>;<CAP>;IGNORE # 528 Ǟ
-#
+reorder-after <a>
+<a-diaeresis>
+reorder-after <c>
+<c-cedilla>
+<ccaron>
+<ccirc>
+reorder-after <d>
+<d//>
+reorder-after <g>
+<gcirc>
+reorder-after <h>
+<hcirc>
+reorder-after <n>
+<ng>
+reorder-after <o>
+<o-diaeresis>
+reorder-after <r>
+<rcaron>
+reorder-after <s>
+<scaron>
+<scirc>
+reorder-after <t>
+<t//>
+reorder-after <u>
+<u-diaeresis>
+reorder-after <z>
+<zcaron>
+<zcirc>
+% Danish sequence
+<ae>
+<o-stroke>
+<a-ring>
+% COMBINING MACRON <MAC>
+<U0304>
+% COMBINING ACUTE ACCENT <ACA>
+<U0301>
+% COMBINING CARON
+<U030C>
+% COMBINING GRAVE ACCENT
+<U0300>
+
+reorder-after <U0041>
+<U00C4> <a-diaeresis>;<BAS>;<CAP>;IGNORE % Ä
+reorder-after <U0043>
+<U00C7> <c-cedilla>;<BAS>;<CAP>;IGNORE % Ç
+<U010C> <ccaron>;<BAS>;<CAP>;IGNORE % Č
+<U0108> <ccirc>;<BAS>;<CAP>;IGNORE % Ĉ
+reorder-after <U0044>
+<U0110> <d//>;<BAS>;<CAP>;IGNORE % Đ
+reorder-after <U0047>
+<U011C> <gcirc>;<BAS>;<CAP>;IGNORE % Ĝ
+reorder-after <U0048>
+<U0124> <hcirc>;<BAS>;<CAP>;IGNORE % Ĥ
+reorder-after <U004E>
+<U014A> <ng>;<BAS>;<CAP>;IGNORE % Ŋ
+reorder-after <U004F>
+<U00D6> <o-diaeresis>;<BAS>;<CAP>;IGNORE % Ö
+reorder-after <U0052>
+<U0158> <rcaron>;<BAS>;<CAP>;IGNORE % Ř
+reorder-after <U0053>
+<U0160> <scaron>;<BAS>;<CAP>;IGNORE % Š
+<U015C> <scirc>;<BAS>;<CAP>;IGNORE % Ŝ
+reorder-after <U0054>
+<U0166> <t//>;<BAS>;<CAP>;IGNORE % Ŧ
+reorder-after <U0055>
+<U00DC> <u-diaeresis>;<BAS>;<CAP>;IGNORE % Ü
+reorder-after <U005A>
+<U017D> <zcaron>;<BAS>;<CAP>;IGNORE % Ž
+<U1E90> <zcirc>;<BAS>;<CAP>;IGNORE % Ẑ
+
+reorder-after <U0061>
+<U00E4> <a-diaeresis>;<BAS>;<MIN>;IGNORE % ä
+reorder-after <U0063>
+<U00E7> <c-cedilla>;<BAS>;<MIN>;IGNORE % ç
+<U010D> <ccaron>;<BAS>;<MIN>;IGNORE % č
+<U0109> <ccirc>;<BAS>;<MIN>;IGNORE % ĉ
+reorder-after <U0064>
+<U0111> <d//>;<BAS>;<MIN>;IGNORE % đ
+reorder-after <U0067>
+<U011D> <gcirc>;<BAS>;<MIN>;IGNORE % ĝ
+reorder-after <U0068>
+<U0125> <hcirc>;<BAS>;<MIN>;IGNORE % ĥ
+reorder-after <U006E>
+<U014B> <ng>;<BAS>;<MIN>;IGNORE % ŋ
+reorder-after <U006F>
+<U00F6> <o-diaeresis>;<BAS>;<MIN>;IGNORE % ö
+reorder-after <U0072>
+<U0159> <rcaron>;<BAS>;<MIN>;IGNORE % ř
+reorder-after <U0073>
+<U0161> <scaron>;<BAS>;<MIN>;IGNORE % š
+<U015D> <scirc>;<BAS>;<MIN>;IGNORE % ŝ
+reorder-after <U0074>
+<U0167> <t//>;<BAS>;<MIN>;IGNORE % ŧ
+reorder-after <U0075>
+<U00FC> <u-diaeresis>;<BAS>;<MIN>;IGNORE % 
+reorder-after <U005A>
+<U017E> <zcaron>;<BAS>;<MIN>;IGNORE % ž
+<U1E91> <zcirc>;<BAS>;<MIN>;IGNORE % ẑ
+
+% <U0041> a is a separate letter in Babyish
+<U0100> <a>;<MAC>;<CAP>;IGNORE % LATIN CAPITAL LETTER A WITH MACRON
+<U0101> <a>;<MAC>;<MIN>;IGNORE % LATIN SMALL LETTER A WITH MACRON
+<U00C1> <a>;<ACA>;<CAP>;IGNORE % LATIN CAPITAL LETTER A WITH ACUTE
+<U00E1> <a>;<ACA>;<MIN>;IGNORE % LATIN SMALL LETTER A WITH ACUTE
+<U01CD> <a>;<CAR>;<CAP>;IGNORE % LATIN CAPITAL LETTER A WITH CARON
+<U01CE> <a>;<CAR>;<MIN>;IGNORE % LATIN SMALL LETTER A WITH CARON
+<U00C0> <a>;<GRA>;<CAP>;IGNORE % LATIN CAPITAL LETTER A WITH GRAVE
+<U00E0> <a>;<GRA>;<MIN>;IGNORE % LATIN SMALL LETTER A WITH GRAVE
+
+% <U00C4> ä is a separate letter in Babyish
+<U01DE> <a-diaeresis>;<MAC>;<CAP>;IGNORE % LATIN CAPITAL LETTER A WITH DIAERESIS AND MACRON
+<U01DF> <a-diaeresis>;<MAC>;<MIN>;IGNORE % LATIN SMALL LETTER A WITH DIAERESIS AND MACRON
+
+% <U00D6> ö is a separate letter in Babyish
+<U022A> <o-diaeresis>;<MAC>;<CAP>;IGNORE % LATIN CAPITAL LETTER O WITH DIAERESIS AND MACRON
+<U022B> <o-diaeresis>;<MAC>;<MIN>;IGNORE % LATIN SMALL LETTER O WITH DIAERESIS AND MACRON
+
+% <U00DC> ü is a separate letter in Babyisho-diaeresis
+<U01D5> <u-diaeresis>;<MAC>;<CAP>;IGNORE % LATIN CAPITAL LETTER U WITH DIAERESIS AND MACRON
+<U01D6> <u-diaeresis>;<MAC>;<MIN>;IGNORE % LATIN SMALL LETTER U WITH DIAERESIS AND MACRON
+<U01D7> <u-diaeresis>;<MAC>;<CAP>;IGNORE % LATIN CAPITAL LETTER U WITH DIAERESIS AND ACUTE
+<U01D8> <u-diaeresis>;<MAC>;<MIN>;IGNORE % LATIN SMALL LETTER U WITH DIAERESIS AND ACUTE
+<U01D9> <u-diaeresis>;<MAC>;<CAP>;IGNORE % LATIN CAPITAL LETTER U WITH DIAERESIS AND CARON
+<U01DA> <u-diaeresis>;<MAC>;<MIN>;IGNORE % LATIN SMALL LETTER U WITH DIAERESIS AND CARON
+<U01DB> <u-diaeresis>;<MAC>;<CAP>;IGNORE % LATIN CAPITAL LETTER U WITH DIAERESIS AND GRAVE
+<U01DC> <u-diaeresis>;<MAC>;<MIN>;IGNORE % LATIN SMALL LETTER U WITH DIAERESIS AND GRAVE
+
+% <U004E> n is a separate letter in Babyish
+<U01F8> <n>;<GRA>;<CAP>;IGNORE % LATIN CAPITAL LETTER N WITH GRAVE
+<U01F9> <n>;<GRA>;<MIN>;IGNORE % LATIN SMALL LETTER N WITH GRAVE
+
+% <U00C6> is a separate letter in Danish
+reorder-after <U017B>
+<U00C6> <ae>;<BAS>;<CAP>;IGNORE
+<U00E6> <ae>;<BAS>;<MIN>;IGNORE
+<U01FC> <ae>;<ACA>;<CAP>;IGNORE
+<U01FD> <ae>;<ACA>;<MIN>;IGNORE
+<U01E2> <ae>;<MAC>;<CAP>;IGNORE
+<U01E3> <ae>;<MAC>;<MIN>;IGNORE
+% <U00D8> is a separate letter in Danish
+<U00D8> <o-stroke>;<BAS>;<CAP>;IGNORE
+<U00F8> <o-stroke>;<BAS>;<MIN>;IGNORE
+<U01FE> <o-stroke>;<ACA>;<CAP>;IGNORE
+<U01FF> <o-stroke>;<ACA>;<MIN>;IGNORE
+<U0150> <o-stroke>;<DAC>;<CAP>;IGNORE
+<U0151> <o-stroke>;<DAC>;<MIN>;IGNORE
+% <U00C5> is a separate letter in Danish
+<U00C5> <a-ring>;<BAS>;<CAP>;IGNORE
+<U00E5> <a-ring>;<BAS>;<MIN>;IGNORE
+<A-A>   <a-ring>;<A-A>;<CAP>;IGNORE
+<A-a>   <a-ring>;<A-A>;<CAP-MIN>;IGNORE
+<a-A>   <a-ring>;<A-A>;<MIN-CAP>;IGNORE
+<a-a>   <a-ring>;<A-A>;<MIN>;IGNORE
+
+% consider as <o-diaeresis><macron>
+<U0150> <o-diaeresis>;<MAC>;<CAP>;IGNORE 
+<U0151> <o-diaeresis>;<MAC>;<MIN>;IGNORE
+% consider as <u-diaeresis><macron>
+<U0170> <u-diaeresis>;<MAC>;<CAP>;IGNORE
+<U0171> <u-diaeresis>;<MAC>;<MIN>;IGNORE
+
+reorder-end
 END LC_COLLATE
 
-LC_MONETARY
-% This is the POSIX Locale definition the LC_MONETARY category.
-% These are generated based on XML base Locale difintion file
-% for IBM Class for Unicode/Java
-%
-int_curr_symbol		"<U0042><U004B><U004B><U0020>"
-currency_symbol		"<U004B><U010D>"
-mon_decimal_point       "<U002E>"
-mon_thousands_sep	"<U00A0>"
-mon_grouping      	3;3
-positive_sign		""
-negative_sign		"<U002D>"
-int_frac_digits		2
-frac_digits		2
-p_cs_precedes		0
-p_sep_by_space		1
-n_cs_precedes		0
-n_sep_by_space		1
-p_sign_posn		1
-n_sign_posn		1
-
-END LC_MONETARY
-
-
-LC_NUMERIC
-% This is the POSIX Locale definition for the LC_NUMERIC  category.
-%
-decimal_point           "<U002E>"
-thousands_sep		"<U00A0>"
-grouping		3;3
-
-END LC_NUMERIC
-
-
 LC_TIME
-% This is the POSIX Locale definition for the LC_TIME category.
-% These are generated based on XML base Locale difintion file
-% for IBM Class for Unicode/Java
 %
-% Removed trailing space, by Anthony Fok <anthony@thizlinux.com>, Feb 2002
 % Abbreviated weekday names (%a)
-abday       "<U0053><U0075><U006E>";"<U004D><U006F><U006E>";/
-            "<U0054><U0075><U0065>";"<U0057><U0065><U0064>";/
-            "<U0054><U0068><U0075>";"<U0046><U0072><U0069>";/
-            "<U0053><U0061><U0074>"
+% The abbreviations for the week days:
+% - Sùn, Mūn, Fó, Sui, Muk, Gùm, Tou
+abday       "<U0053><U00F9><U006E>";"<U004D><U016B><U006E>";/
+            "<U0046><U00F3>";"<U0053><U0075><U0069>";/
+            "<U004D><U01D4><U006B>";"<U0047><U00F9><U006D>";/
+            "<U0054><U00F3><U0075>"
 %
-% Removed trailing space, by Anthony Fok <anthony@thizlinux.com>, Feb 2002
 % Full weekday names (%A)
-day         "<U0053><U0075><U006E><U0064><U0061><U0079>";/
-            "<U004D><U006F><U006E><U0064><U0061><U0079>";/
-            "<U0054><U0075><U0065><U0073><U0064><U0061><U0079>";/
-	    "<U0057><U0065><U0064><U006E><U0065><U0073><U0064><U0061><U0079>";/
-            "<U0054><U0068><U0075><U0072><U0073><U0064><U0061><U0079>";/
-	    "<U0046><U0072><U0069><U0064><U0061><U0079>";/
-            "<U0053><U0061><U0074><U0075><U0072><U0064><U0061><U0079>"
+day         "<U0053><U00F9><U006E><U0064><U0061><U0067>";/
+            "<U004D><U016B><U006E><U0064><U0061><U0067>";/
+            "<U0046><U00F3><U0064><U0061><U0067>";/
+            "<U0053><U0075><U0069><U0064><U0061><U0067>";/
+            "<U004D><U01D4><U006B><U0064><U0061><U0067>";/
+            "<U0047><U00F9><U006D><U0064><U0061><U0067>";/
+            "<U0054><U00F3><U0075><U0064><U0061><U0067>"
 %
 % Abbreviated month names (%b)
-abmon       "<U0031><U6708>";"<U0032><U6708>";/
-            "<U0033><U6708>";"<U0034><U6708>";/
-            "<U0035><U6708>";"<U0036><U6708>";/
-            "<U0037><U6708>";"<U0038><U6708>";/
-            "<U0039><U6708>";"<U0031><U0030><U6708>";/
-            "<U0031><U0031><U6708>";"<U0031><U0032><U6708>"
+abmon         "<U0031><U006D>";"<U0032><U006D>";"<U0033><U006D>";/
+            "<U0034><U006D>";"<U0035><U006D>";"<U0036><U006D>";/
+            "<U0037><U006D>";"<U0038><U006D>";"<U0039><U006D>";/
+            "<U0031><U0030><U006D>";"<U0031><U0031><U006D>";"<U0031><U0032><U006D>"
 %
 % Full month names (%B)
-mon         "<U4E00><U6708>";"<U4E8C><U6708>";/
-            "<U4E09><U6708>";"<U56DB><U6708>";/
-            "<U4E94><U6708>";"<U516D><U6708>";/
-            "<U4E03><U6708>";"<U516B><U6708>";/
-            "<U4E5D><U6708>";"<U5341><U6708>";/
-            "<U5341><U4E00><U6708>";"<U5341><U4E8C><U6708>"
-%
-% Equivalent of AM PM
-am_pm       "<U0041><U004D>";"<U0050><U004D>"
+mon         "<U0044><U0065><U002D><U0031><U002D><U006D><U006F><U006E><U0167>";"<U0044><U0065><U002D><U0032><U002D><U006D><U006F><U006E><U0167>";/
+            "<U0044><U0065><U002D><U0033><U002D><U006D><U006F><U006E><U0167>";/
+            "<U0044><U0065><U002D><U0034><U002D><U006D><U006F><U006E><U0167>";/
+            "<U0044><U0065><U002D><U0035><U002D><U006D><U006F><U006E><U0167>";/
+            "<U0044><U0065><U002D><U0036><U002D><U006D><U006F><U006E><U0167>";/
+            "<U0044><U0065><U002D><U0037><U002D><U006D><U006F><U006E><U0167>";/
+            "<U0044><U0065><U002D><U0038><U002D><U006D><U006F><U006E><U0167>";/
+            "<U0044><U0065><U002D><U0039><U002D><U006D><U006F><U006E><U0167>";/
+            "<U0044><U0065><U002D><U0031><U0030><U002D><U006D><U006F><U006E><U0167>";/
+            "<U0044><U0065><U002D><U0031><U0031><U002D><U006D><U006F><U006E><U0167>";/
+            "<U0044><U0065><U002D><U0031><U0032><U002D><U006D><U006F><U006E><U0167>"
 %
 % Appropriate date and time representation
-% Update by Roger So <roger.so@sw-linux.com>
-% Changed %b to %m, by Anthony Fok <anthony@thizlinux.com>, Feb 2002
-d_t_fmt     "<U0025><U0059><U5E74><U0025><U006D><U6708><U0025><U0064><U65E5>/
-<U0020><U0025><U0041><U0020><U0025><U0048><U003A><U0025><U004D>/
-<U003A><U0025><U0053>"
+% Abreviated date and time representation to be referenced by the "%c" field descriptor -
+%
+% "%a" (short weekday name),
+% "%d" (day of month as a decimal number),
+% "%b" (short month name),
+% "%Y" (year with century as a decimal number),
+% "%T" (24-hour clock time in format HH:MM:SS),
+% "%Z" (Time zone name)
+% %A, %B %d, %Y %I:%M:%S %Z
+d_t_fmt     "<U0025><U0061><U0020><U0025><U0064><U0020><U0025><U0062><U0020><U0025><U0059><U0020><U0025><U0054><U0020><U0025><U005A>"
 %
 % Appropriate date representation
-% %Y %B %d %A
-d_fmt     "<U0025><U0059><U0020><U0025><U0042><U0020><U0025><U0064><U002C><U0020><U0025><U0041>"
+% %Y-%m-%d
+d_fmt       "<U0025><U0059><U002D><U0025><U006D><U002D><U0025><U0064>"
 %
-% Appropriate time representation
-% %I:%M:%S %Z
-t_fmt       "<U0025><U0049><U003A><U0025><U004D><U003A><U0025><U0053><U0020><U0025><U005A>"
+% Time representation to be referenced by the "%X" field descriptor -
+% "%T" (24-hour clock time in format HH:MM:SS)
+t_fmt       "<U0025><U0054>"
+
+% Define representation of ante meridiem and post meridiem strings -
+% The "" mean default to "AM" and "PM".
+am_pm       "";""
+
+% Define time representation in 12-hour format with "am_pm", to be referenced by the "%r"
+% The "" means that this format is not supported.
+t_fmt_ampm  ""
+
+% Date representation not described in ISO/IEC 14652. Comes out as -
+% Appropriate date representation (date(1))  "%Y-%m-%d (%a) %H:%M:%S %Z"
 %
-% Appropriate 12 h time representation (%r)
-% Update by Roger So <roger.so@sw-linux.com>
-t_fmt_ampm  "<U0025><U0070><U0020><U0025><U0049><U003A><U0025><U004D>/
-<U003A><U0025><U0053>"
+% %Y - year with century as a decimal number,e.g. 2001.
+% %m - month as a decimal number
+% %d - day of month as a decimal number,
+% %a - abbreviated weekday name,
+% %H - hour (24-hour clock) as a decimal number (00 to 23),
+% %M - minute as a decimal number (00 to 59),
+% %S - seconds as a decimal number (00 to 59),
+% %Z - time-zone name,
+date_fmt  /
+"<U0025><U0059><U002D><U0025><U006D><U002D><U0025><U0064><U0020>/
+<U0028><U0025><U0061><U0029>/
+<U0020><U0025><U0048><U003A><U0025><U004D><U003A><U0025><U0053>/
+<U0020><U0025><U005A>"
+
 %
-% Appropriate date representation (date(1))   "%a %b %e %H:%M:%S %Z %Y"
-date_fmt       "<U0025><U0061><U0020><U0025><U0062><U0020><U0025><U0065>/
-<U0020><U0025><U0048><U003A><U0025><U004D><U003A><U0025><U0053><U0020>/
-<U0025><U005A><U0020><U0025><U0059>"
-first_weekday 2
-first_workday 2
+%  FIXME
+first_weekday 1
 END LC_TIME
 
+LC_NUMERIC
+% "."
+decimal_point           "<U002E>"
+
+% ","
+thousands_sep           "<U002C>"
+grouping                3;3
+%
+END LC_NUMERIC
+
+LC_MONETARY
+% "BKK "
+int_curr_symbol         "<U0042><U004B><U004B><U0020>"
+% "Kř"
+currency_symbol         "<U006B><U0159>"
+% "."
+mon_decimal_point     "<U002E>"
+% ","
+mon_thousands_sep     "<U002C>"
+mon_grouping            3;3
+positive_sign           ""
+
+% "-"
+negative_sign           "<U002D>"
+int_frac_digits         2
+frac_digits             2
+p_cs_precedes           1
+p_sep_by_space          2
+n_cs_precedes           1
+n_sep_by_space          2
+p_sign_posn             4
+n_sign_posn             4
+%
+END LC_MONETARY
 
 LC_MESSAGES
-% yes: Mi
-% no: Non
-yesstr    "<U00
-% yesexpr     "^[<m><M>]"
-% noexpr      "^[<n><N>]"
-yesexpr     "<U005E><U005B><U006D><U004D><U005D>"
-noexpr      "<U005E><U005B><U006E><U004E><U005D>"
+% The affirmative response -
+% ^[1Mm].*
+yesexpr      "<U005E><U005B><U0030><U004D><U006D><U005D><U002E><U002A>"
+
+% The negative response -
+% ^[0Nn].*
+noexpr      "<U005E><U005B><U0030><U004E><U006E><U005D><U002E><U002A>"
 END LC_MESSAGES
 
-
 LC_PAPER
-% This is the ISO_IEC TR14652 Locale definition for the
-% LC_PAPER category
-height      297
-width       210
+% This is the ISO_IEC TR14652 Locale definition for the LC_PAPER category
+% generated by IBM Basic CountryPack Transformer.
+height   297
+width    210
 
 END LC_PAPER
-
-
-LC_NAME
-% This is the ISO_IEC TR14652 Locale definition for the
-% LC_NAME category.
-%
-name_fmt    "<U0025><U0066><U0025><U0074><U0025><U0064><U0031>"
-name_gen    "<U541B>"
-name_mr     "<U5148><U751F>"
-name_mrs    "<U592B><U4EBA><U002E>"
-name_miss   "<U5C0F><U59D0>"
-name_ms     "<U5973><U58EB>"
-
-END LC_NAME
-
-
-LC_ADDRESS
-% This is the ISO_IEC TR14652 Locale definition for the
-% LC_ADDRESS
-postal_fmt  "<U0025><U007A><U0025><U0063><U0025><U0054><U0025><U0073>/
-<U0025><U0062><U0025><U0065><U0025><U0072>"
-% "BK"
-country_ab2 "<U0042><U004B>"
-% "BAB"
-country_ab3 "<U0042><U0041><U0042>"
-country_num 344
-% "BK"
-country_car   "<U0042><U004B>"
-%country_isbn  ???
-END LC_ADDRESS
-
-
-LC_TELEPHONE
-% This is the ISO_IEC TR14652 Locale definition for the
-%
-tel_int_fmt "<U002B><U0025><U0063><U0020><U003B><U0025><U0061><U0020>/
-<U003B><U0025><U006C>"
-int_prefix  "<U0038><U0035><U0032>"
-int_select  "<U0030><U0030><U0031>"
-END LC_TELEPHONE
-
 
 LC_MEASUREMENT
 % This is the ISO_IEC TR14652 Locale definition for the LC_MEASUREMENT
 % category generated by IBM Basic CountryPack Transformer.
-measurement 1
-
+measurement    1
 END LC_MEASUREMENT
+
+LC_NAME
+% Format for addressing a person.
+% "%d%t%g%t%m%t%f"
+%
+% "Salutation",
+% "Empty string, or <Space>",
+% "First given name",
+% "Empty string, or <Space>",
+% "Middle names",
+% "Empty string, or <Space>",
+% "Clan names"
+name_fmt    "<U0025><U0064><U0025><U0074><U0025><U0067><U0025><U0074>/
+<U0025><U006D><U0025><U0074><U0025><U0066>"
+
+% General salutation for any sex
+% (no term)
+name_gen    ""
+
+% Salutation for unmarried females
+% "Miss"
+name_miss   "<U004D><U0069><U0073><U0073>"
+ 
+% Salutation for males
+% "Mr"
+name_mr     "<U004D><U0072>"
+
+% Salutation for married females
+% "Mrs"
+name_mrs    "<U004D><U0072><U0073>"
+
+% Salutation valid for all females
+% "Ms"
+name_ms     "<U004D><U0073>"
+END LC_NAME
+
+LC_ADDRESS
+% Representation of postal addresses (minus the addressee's name) in South
+% Africa. (Ignored for now)
+% "%f%N%a%N%d%N%b%N%s %h %e %r%N%%z %T%N%c%N", which gives -
+%
+% "firm name",
+% "end of line",
+% "C/O address",
+% "end of line",
+% "department name",
+% "Building name",
+% "end of line",
+% "street or block name",
+% "space",
+% "house number or designation",
+% "space",
+% "floor number",
+% "space",
+% "room number, door designation",
+% "end of line",
+% "postal code",
+% "space",
+% "town, city",
+% "end of line",
+% "country designation for the <country_post> keyword",
+% "end of line
+postal_fmt    "<U0025><U0066><U0025><U004E><U0025><U0061><U0025><U004E>/
+<U0025><U0064><U0025><U004E><U0025><U0062><U0025><U004E><U0025><U0073>/
+<U0020><U0025><U0068><U0020><U0025><U0065><U0020><U0025><U0072><U0025>/
+<U004E><U0025><U0025><U007A><U0020><U0025><U0054><U0025>/
+<U004E><U0025><U0063><U0025><U004E>"
+
+% Language name in English - "Babyish"
+lang_name     "<U0042><U0061><U0062><U0079><U0069><U0073><U0068>"
+% ISO 639 language abbreviations:
+% 639-1 2 letter, 639-2 3 letter terminology
+% http://www.loc.gov/standards/iso639-2/englagn.html
+% "bb", "bab"
+lang_ab       "<U0062><U0062>"
+lang_term     "<U0062><U0061><U0062>"
+lang_lib      "<U0062><U0061><U0062>"
+
+% Reference:	http://www.un.org/Depts/unsd/methods/m49alpha.htm
+%		http://www.isbn.spk-berlin.de/html/prefix.htm
+% Country name in English - "Babycaseny"
+country_name "<U0042><U0061><U0062><U0079><U0063><U0061><U0073><U00e8><U006e><U0079>"
+% CEPT MAILCODES are suggested
+% Alternatively use the code found on your countries postal item tracking number
+country_post   "<U0042><U004B>" % "BK", FIXME
+
+% ISO 3166 country number and 2 and 3 letter abreviations
+% http://www.unicode.org/onlinedat/countries.html
+% "BK", "BAB"
+country_ab2   "<U0042><U004B>"
+country_ab3   "<U0042><U0041><U0042>"
+country_num   344 % (HK)
+% UN Geneve 1949:68 Distinguishing signs of vehicles in international traffic
+% http://www.unece.org/trans/conventn/disting-signs-5-2001.pdf
+country_car   "<U0042><U004B>" % "BK", FIXME
+% country_isbn:	957
+country_isbn	"<U0039><U0035><U0037>"
+
+END LC_ADDRESS
+
+LC_TELEPHONE
+% Representation of telephone number for international use -
+% "+%c %a %l", which is
+% "+%c - country code",
+% "%a - area code without the prefix (often 0)",
+% "%l local number".
+tel_int_fmt    "<U002B><U0025><U0063><U0020><U0025><U0061><U0020><U0025>/
+<U006C>"
+
+% Represntation of telephone number for domestic use -
+% %A - area code with national prefix
+% %l - local number".
+% tel_dom_fmt:  "%A-%l"
+tel_dom_fmt	"<U0025><U0041><U002D><U0025><U006C>"
+
+% Prefix for making international calls
+% "00"
+% int_select     "<U0030><U0030>"
+
+% International dialing code
+% "85292432512"
+int_prefix     "<U0038><U0035><U0032><U0039><U0032><U0034><U0033><U0032><U0035><U0031><U0032>"
+
+END LC_TELEPHONE
+
