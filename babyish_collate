@@ -53,6 +53,7 @@ collating-symbol <SMALL>
 % in an ordering of a character.
 
 collating-symbol <a8>
+collating-symbol <aumlaut>
 collating-symbol <b8>
 collating-symbol <c8>
 collating-symbol <d8>
@@ -67,12 +68,14 @@ collating-symbol <l8>
 collating-symbol <m8>
 collating-symbol <n8>
 collating-symbol <o8>
+collating-symbol <oumlaut>
 collating-symbol <p8>
 collating-symbol <q8>
 collating-symbol <r8>
 collating-symbol <s8>
 collating-symbol <t8>
 collating-symbol <u8>
+collating-symbol <uumlaut>
 collating-symbol <v8>
 collating-symbol <w8>
 collating-symbol <x8>
@@ -155,7 +158,8 @@ collating-symbol <HIRAGANA>
 collating-symbol <KATAKANA>
 collating-symbol <SPECIAL>
 
-
+% Babyish Křone symbol
+collating-element <BKrone> from "<U004B><U0159>"
 
 % letter;accent;case;specials
 
@@ -338,6 +342,7 @@ order_start forward;forward;forward;forward
 <U01FD>	"<U0041><U0045>";"<U01FC><U01FC>";"<SMALL><SMALL>";"<U0041><U0045>"
 <U01E2>	"<U0041><U0045>";"<U01E2><U01E2>";"<CAPITAL><CAPITAL>";"<U0041><U0045>"
 <U01E3>	"<U0041><U0045>";"<U01E2><U01E2>";"<SMALL><SMALL>";"<U0041><U0045>"
+<ae>
 
 <U0042>	<U0042>;<NONE>;<CAPITAL>;<U0042>
 <U0062>	<U0042>;<NONE>;<SMALL>;<U0042>

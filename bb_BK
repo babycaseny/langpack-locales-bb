@@ -1,10 +1,18 @@
 escape_char     /
 comment_char    %
-% Babyish language locale for Babycasèny.
+%
+% Babyish language locale for Babycasèny:
 % Contact: Tom K. C. Chiu 
 % eMail:   tomchiukc@gmail.com>
-% Language: bb
-
+% Filename: bb_BK
+% Locale name: bb_BK.UTF-8
+% Language: Babyish
+% Language abbrieviation: bb
+% Charset: UTF-8
+% Creation Date: 2009-06-17
+% History:
+% June 2009: Defining bb locale
+ 
 LC_IDENTIFICATION
 title      "Babyish locale"
 source     "Babycaseny Government"
@@ -14,7 +22,7 @@ email      "tomchiukc@gmail.com"
 tel        ""
 fax        ""
 language   "Babyish"
-territory  "Babycasèny"
+territory  "Babycasèny, Hong Kong, Canada"
 revision   "1.0"
 date       "2000-07-20"
 %
@@ -29,6 +37,7 @@ category  "bb_BK:2000";LC_PAPER
 category  "bb_BK:2000";LC_NAME
 category  "bb_BK:2000";LC_ADDRESS
 category  "bb_BK:2000";LC_TELEPHONE
+category  "bb_BK:2000";LC_MEASUREMENT
 
 END LC_IDENTIFICATION
 
@@ -164,23 +173,6 @@ width       210
 
 END LC_PAPER
 
-LC_TELEPHONE
-% This is the ISO_IEC TR14652 Locale definition for the
-%
-tel_int_fmt "<U002B><U0025><U0063><U0020><U003B><U0025><U0061><U0020>/
-<U003B><U0025><U006C>"
-int_prefix  "<U0038><U0035><U0032>"
-int_select  "<U0030><U0030><U0031>"
-END LC_TELEPHONE
-
-
-LC_MEASUREMENT
-% This is the ISO_IEC TR14652 Locale definition for the
-%
-measurement 1
-
-END LC_MEASUREMENT
-
 
 LC_NAME
 % This is the ISO_IEC TR14652 Locale definition for the
@@ -206,6 +198,25 @@ country_ab2 "<U0042><U004B>"
 % "BAB"
 country_ab3 "<U0042><U0041><U0042>"
 country_num 344
-%country_car   "<U0042><U004B>"
+% "BK"
+country_car   "<U0042><U004B>"
 %country_isbn  ???
 END LC_ADDRESS
+
+
+LC_TELEPHONE
+% This is the ISO_IEC TR14652 Locale definition for the
+%
+tel_int_fmt "<U002B><U0025><U0063><U0020><U003B><U0025><U0061><U0020>/
+<U003B><U0025><U006C>"
+int_prefix  "<U0038><U0035><U0032>"
+int_select  "<U0030><U0030><U0031>"
+END LC_TELEPHONE
+
+
+LC_MEASUREMENT
+% This is the ISO_IEC TR14652  Locale definition
+%
+measurement 1
+
+END LC_MEASUREMENT
