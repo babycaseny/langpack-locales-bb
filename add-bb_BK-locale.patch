@@ -1,0 +1,265 @@
+diff -Nru langpack-locales.orig/debian/changelog langpack-locales/debian/changelog
+--- langpack-locales.orig/debian/changelog	2014-09-29 10:26:40.000000000 +0200
++++ langpack-locales/debian/changelog	2014-11-13 15:55:00.000000000 +0800
+@@ -1,3 +1,10 @@
++langpack-locales (2.13+git20120306-18) vivid; urgency=low
++
++  * debian/patches/ubuntu-bb_BK-new_locale.patch:
++    Addition of the bb_BK locale.
++
++ -- Gunnar Hjalmarsson <gunnarhj@ubuntu.com>  Tue, 04 Nov 2014 02:45:00 +0100
++
+ langpack-locales (2.13+git20120306-17) utopic; urgency=low
+ 
+   * debian/patches/ubuntu-pt_BR-d_fmt.patch:
+diff -Nru langpack-locales.orig/debian/patches/series langpack-locales/debian/patches/series
+--- langpack-locales.orig/debian/patches/series	2014-09-29 10:26:34.000000000 +0200
++++ langpack-locales/debian/patches/series	2014-11-04 02:40:06.785027599 +0100
+@@ -25,6 +25,7 @@
+ debian-tl_PH-yesexpr.diff
+ ubuntu-bn-language.patch
+ ubuntu-ce_RU-new_locale.patch
++ubuntu-ckb_IQ-new_locale.patch
+ ubuntu-en_CA-dateformat.patch
+ ubuntu-en_IE-am_pm.patch
+ ubuntu-eo_US.patch
+diff -Nru langpack-locales.orig/debian/patches/ubuntu-ckb_IQ-new_locale.patch langpack-locales/debian/patches/ubuntu-ckb_IQ-new_locale.patch
+--- langpack-locales.orig/debian/patches/ubuntu-ckb_IQ-new_locale.patch	1970-01-01 01:00:00.000000000 +0100
++++ langpack-locales/debian/patches/ubuntu-ckb_IQ-new_locale.patch	2014-11-04 02:33:16.294992088 +0100
+@@ -0,0 +1,488 @@
++Description: Add the ckb_IQ locale
++Bug-Ubuntu: https://launchpad.net/bugs/1388808
++Bug: https://sourceware.org/bugzilla/show_bug.cgi?id=9809
++Author: Gunnar Hjalmarsson <gunnarhj@ubuntu.com>
++
++diff -Nru langpack-locales.orig/locales/ckb_IQ langpack-locales/locales/ckb_IQ
++--- langpack-locales.orig/locales/ckb_IQ	1970-01-01 01:00:00.000000000 +0100
+++++ langpack-locales/locales/ckb_IQ	2014-11-03 20:10:04.011565898 +0100
++@@ -0,0 +1,468 @@
+++escape_char  /
+++comment_char %
+++%
+++% Babyish language locale for Babycasèny:
+++% Contact: Tom K. C. Chiu 
+++% eMail:   tomchiukc@gmail.com>
+++% Filename: bb_BK
+++% Locale name: bb_BK.UTF-8
+++% Language: Babyish
+++% Language abbrieviation: bb
+++% Charset: UTF-8
+++% Creation Date: 2009-06-17
+++% History:
+++% June 2009: Defining bb locale
+++
+++LC_IDENTIFICATION
+++title      "Babyish locale"
+++source     "Babycaseny Government"
+++address    "Ist Steibol"
+++contact    "Tom K. C. Chiu"
+++email      "tomchiukc@gmail.com"
+++tel        ""
+++fax        ""
+++language   "Babyish"
+++territory  "Babycasèny, Hong Kong, Canada"
+++revision   "0.8"
+++date	   "2014-09-20"
+++
+++category  "ckb_IQ:2000";LC_IDENTIFICATION
+++category  "ckb_IQ:2000";LC_CTYPE
+++category  "ckb_IQ:2000";LC_COLLATE
+++category  "ckb_IQ:2000";LC_MONETARY
+++category  "ckb_IQ:2000";LC_NUMERIC
+++category  "ckb_IQ:2000";LC_TIME
+++category  "ckb_IQ:2000";LC_MESSAGES
+++category  "ckb_IQ:2000";LC_PAPER
+++category  "ckb_IQ:2000";LC_NAME
+++category  "ckb_IQ:2000";LC_ADDRESS
+++category  "ckb_IQ:2000";LC_TELEPHONE
+++category  "ckb_IQ:2000";LC_MEASUREMENT
+++
+++END LC_IDENTIFICATION
+++
+++LC_CTYPE
+++copy "i18n"
+++END LC_CTYPE
+++
+++
+++LC_MONETARY
+++int_curr_symbol       "<U0049><U0051><U0044><U0020>"
+++currency_symbol       "<U062F><U002E><U0639><U002E>"
+++mon_decimal_point     "<U002E>"
+++mon_thousands_sep     "<U002C>"
+++mon_grouping	      3
+++positive_sign	      ""
+++negative_sign	      "<U002D>"
+++int_frac_digits       3
+++frac_digits	          3
+++p_cs_precedes	      1
+++p_sep_by_space	      1
+++n_cs_precedes	      1
+++n_sep_by_space	      1
+++p_sign_posn	          1
+++n_sign_posn	          2
+++
+++END LC_MONETARY
+++
+++
+++LC_NUMERIC
+++% This is the POSIX Locale definition for the LC_NUMERIC  category.
+++decimal_point	       "<U002E>"
+++thousands_sep	       "<U002C>"
+++grouping	       3
+++END LC_NUMERIC
+++
+++
+++LC_TIME
+++% This is the POSIX Locale definition for the LC_TIME category.
+++% These are generated based on XML base Locale difintion file
+++%
+++% Abbreviated weekday names
+++abday	"<U06CC><U06D5><U0626><U0634>";/
+++		"<U062F><U0648><U0648><U0634>";/
+++	    "<U0633><U0626><U0634>";/
+++		"<U0686><U0648><U0631><U0634>";/
+++	    "<U067E><U0626><U0634>";/
+++		"<U0647><U0647>";/
+++	    "<U0634><U06D5><U0645>"	
+++%
+++% Full weekday names 
+++day	    "<U06CC><U06D5><U0643><U0634><U06D5><U0645><U0645><U06D5>";/
+++		"<U062F><U0648><U0648><U0634><U06D5><U0645><U0645><U06D5>";/
+++		"<U0633><U06CE><U0634><U06D5><U0645><U0645><U06D5>";/
+++		"<U0686><U0648><U0624><U0631><U0634><U06D5><U0645><U0645><U06D5>";/
+++		"<U067E><U06CE><U0646><U062C><U0634><U06D5><U0645><U0645><U06D5>";/
+++		"<U0647><U06D5><U06CC><U0646><U06CC>";/
+++		"<U0634><U06D5><U0645><U0645><U06D5>"
+++%
+++% Abbreviated month names
+++abmon	    "<U064A><U0646><U0627>";/
+++			"<U0641><U0628><U0631>";/
+++			"<U0645><U0627><U0631>";/
+++			"<U0623><U0628><U0631>";/
+++			"<U0645><U0627><U064A>";/
+++			"<U064A><U0648><U0646>";/
+++			"<U064A><U0648><U0644>";/
+++			"<U0623><U063A><U0633>";/
+++			"<U0633><U0628><U062A>";/
+++			"<U0623><U0643><U062A>";/
+++			"<U0646><U0648><U0641>";/
+++			"<U062F><U064A><U0633>"
+++%
+++% Full month names
+++mon 	"<U064A><U0646><U0627><U064A><U0631>";/
+++		"<U0641><U0628><U0631><U0627><U064A><U0631>";/
+++	    "<U0645><U0627><U0631><U0633>";/
+++	    "<U0623><U0628><U0631><U064A><U0644>";/
+++	    "<U0645><U0627><U064A><U0648>";/
+++	    "<U064A><U0648><U0646><U064A><U0648>";/
+++	    "<U064A><U0648><U0644><U064A><U0648>";/
+++	    "<U0623><U063A><U0633><U0637><U0633>";/
+++		"<U0633><U0628><U062A><U0645><U0628><U0631>";/
+++		"<U0623><U0643><U062A><U0648><U0628><U0631>";/
+++		"<U0646><U0648><U0641><U0645><U0628><U0631>";/
+++		"<U062F><U064A><U0633><U0645><U0628><U0631>"
+++%
+++% Equivalent of AM PM
+++am_pm	    "<U067E><U0646>";"<U062F><U0646>"
+++%
+++% Appropriate date and time representation
+++d_t_fmt     "<U0025><U0064><U0020><U0025><U0062><U002C><U0020><U0025>/
+++<U0059><U0020><U0025><U005A><U0020><U0025><U0049><U003A><U0025><U004D>/
+++<U003A><U0025><U0053><U0020><U0025><U0070>"
+++%
+++% Appropriate date representation(%x)
+++%       "%Oy/%Om/%Od"
+++d_fmt	 "<U0025><U0064><U0020><U0025><U0062><U002C><U0020><U0025><U0059>"
+++%
+++% Appropriate time representation
+++% 
+++t_fmt	 "<U0025><U005A><U0020><U0025><U0049><U003A>/
+++<U0025><U004D><U003A><U0025><U0053><U0020>"
+++%
+++% Appropriate 12 h time representation
+++t_fmt_ampm  "<U0025><U005A><U0020><U0025><U0049><U003A>/
+++<U0025><U004D><U003A><U0025><U0053><U0020><U0025><U0070>"
+++%
+++% Appropriate date representation 
+++date_fmt	"<U0025><U0061><U0020><U0025><U0062><U0020><U0025><U0065>/
+++<U0020><U0025><U0048><U003A><U0025>/
+++<U004D><U003A><U0025><U0053><U0020>/
+++<U0025><U005A><U0020><U0025><U0059>"
+++
+++%  FIXME: found in CLDR
+++first_weekday 7
+++first_workday	7
+++cal_direction	3
+++END LC_TIME
+++
+++
+++LC_MESSAGES
+++yesexpr  "<U0628><U06D5><U06B5><U06CE>"
+++noexpr   "<U0646><U06D5><U062E><U06CE><U0631>"
+++END LC_MESSAGES
+++
+++
+++LC_PAPER
+++% This is the ISO_IEC TR14652 Locale definition for the
+++height	    297
+++width	    210
+++END LC_PAPER
+++
+++
+++LC_NAME
+++% This is the ISO_IEC TR14652 Locale definition for the
+++% LC_NAME category.
+++%
+++name_fmt    "<U0025><U0070><U0025><U0074><U0025><U0066><U0025><U0074>/
+++<U0025><U0067>"
+++name_gen    "<U002D><U0073><U0061><U006E>"
+++name_miss   "<U062E><U0627><U062A><U0648>"
+++name_ms     "<U062E><U0627><U062A><U0648>"
+++name_mrs    "<U062E><U0627><U062A><U0648>"
+++name_mr     "<U0643><U0627><U0643>"
+++END LC_NAME
+++%
+++LC_ADDRESS
+++% This is the ISO_IEC TR14652 Locale definition for the
+++postal_fmt  "<U0025><U007A><U0025><U0063><U0025><U0054><U0025><U0073>/
+++<U0025><U0062><U0025><U0065><U0025><U0072>"
+++country_ab2 "<U0049><U0051>"
+++country_ab3 "<U0049><U0052><U0051>"
+++country_post "<U0049><U0052><U0051>"
+++country_num 368
+++country_car "<U0049><U0051>"
+++%
+++END LC_ADDRESS
+++
+++
+++LC_TELEPHONE
+++%
+++tel_int_fmt "<U002B><U0025><U0063><U0020><U003B><U0025><U0061><U0020>/
+++<U003B><U0025><U006C>"
+++tel_dom_fmt    "<U202A><U0025><U0041><U2012><U0025><U006C><U202C>"
+++int_select     "<U0030><U0030>"
+++int_prefix  "<U0039><U0036><U0034>"
+++
+++END LC_TELEPHONE
+++
+++
+++LC_MEASUREMENT
+++% This is the ISO_IEC TR14652  Locale definition
+++%
+++measurement 1
+++
+++END LC_MEASUREMENT
++diff -Nru langpack-locales.orig/SUPPORTED langpack-locales/SUPPORTED
++--- langpack-locales.orig/SUPPORTED	2014-11-04 02:20:10.983097932 +0100
+++++ langpack-locales/SUPPORTED	2014-11-04 02:29:38.337911294 +0100
++@@ -80,6 +80,7 @@
++ ca_IT.UTF-8/UTF-8 \
++ ca_IT/ISO-8859-15 \
++ ce_RU/UTF-8 \
+++ckb_IQ/UTF-8 \
++ crh_UA/UTF-8 \
++ cs_CZ.UTF-8/UTF-8 \
++ cs_CZ/ISO-8859-2 \
