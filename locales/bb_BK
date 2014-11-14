@@ -145,7 +145,7 @@ LC_TIME
 % Removed trailing space, by Anthony Fok <anthony@thizlinux.com>, Feb 2002
 % Abbreviated weekday names (%a)
 % The abbreviations for the week days:
-% - Sùn, M?n, F?, Sui, Muk, Gùm, Tou
+% - Sùn, M?n, Fó, Sui, Muk, Gùm, Tou
 abday       "<U0053><U00F9><U006E>";"<U004D><U016B><U006E>";/
             "<U0046><U00F3>"       ;"<U0053><U0075><U0069>";/
             "<U004D><U01D4><U006B>";"<U0047><U00F9><U006D>";/
@@ -228,8 +228,8 @@ date_fmt  /
 <U0020><U0025><U005A>"
 %
 %  FIXME
-first_weekday 1
-first_workday 2
+first_weekday 1 % Start from Sùn
+first_workday 2 % Work start from Mun
 END LC_TIME
 
 
