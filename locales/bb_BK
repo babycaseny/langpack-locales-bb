@@ -1,7 +1,7 @@
 escape_char     /
 comment_char    %
 %
-% Babyish language locale for Babycas?ny:
+% Babyish language locale for Babycasèny:
 % Source: Babyish Standards Association
 % Address: Ist Steibol
 % Contact: Tom K. C. Chiu 
@@ -40,7 +40,7 @@ email      "babycaseny@gmail.com"
 tel        "+852 9243-2512"
 fax        ""
 language   "Babyish"
-territory  "Babycas?ny, Hong Kong, Canada"
+territory  "Babycasèny, Hong Kong, Canada"
 revision   "1.0"
 date       "2000-07-20"
 audience   ""
@@ -78,10 +78,10 @@ copy "iso14651_t1"
 %% copy "babyish_collate"
 
 % Characters list:
-% A a	? ?	B b	? ?	C c	? ?	? ?	D d	? ?	E e	F f	
-% G g	G? g?	H h	? ?	I i	J j	K k	K? k?	L l	M m	N n	? ?	
-% O o	? ?	P p	Q q	R r	? ?	R? r?	S s	? ?	? ?	T t	
-% ? ?	U u	? ?	V v	W w	X x	Y y	Z z	? ?	? ?	 
+% A a	Ä ä	B b	Ç ç	C c	Č č	Ĉ ĉ	D d	Đ đ	E e	F f	
+% G g	Gĥ gĥ	H h	Ĥ ĥ	I i	J j	K k	Kĥ kĥ	L l	M m	N n	Ŋ ŋ	
+% O o	Ö ö	P p	Q q	R r	Ř ř	Rĥ rĥ	S s	Š š	Ŝ ŝ	T t	
+% Ŧ ŧ	U u	Ü ü	V v	W w	X x	Y y	Z z	Ž ž	Ẑ ẑ	 
 
 reorder-after <BAS>
 <MAC>	% macron
@@ -91,12 +91,12 @@ reorder-after <BAS>
 
 #
 reorder-after <U0061> % a
-<U00E4> <ae>;<BAS>;<MIN>;IGNORE # 204 ?
-<U01DF> <ae>;<MAC>;<MIN>;IGNORE # 210 ?
+<U00E4> <ae>;<BAS>;<MIN>;IGNORE # 204 ä
+<U01DF> <ae>;<MAC>;<MIN>;IGNORE # 210 ǟ
 #
 reorder-after <U0041> % A
-<U00C4> <ae>;<BAS>;<CAP>;IGNORE # 522 ?
-<U01DE> <ae>;<MAC>;<CAP>;IGNORE # 528 ?
+<U00C4> <ae>;<BAS>;<CAP>;IGNORE # 522 Ä
+<U01DE> <ae>;<MAC>;<CAP>;IGNORE # 528 Ǟ
 #
 END LC_COLLATE
 
@@ -145,16 +145,16 @@ LC_TIME
 % Removed trailing space, by Anthony Fok <anthony@thizlinux.com>, Feb 2002
 % Abbreviated weekday names (%a)
 % The abbreviations for the week days:
-% - S?n, M?n, F?, Sui, Muk, G?m, Tou
+% - Sùn, M?n, F?, Sui, Muk, Gùm, Tou
 abday       "<U0053><U00F9><U006E>";"<U004D><U016B><U006E>";/
-            "<U0046><U00F3>";"<U0053><U0075><U0069>";/
+            "<U0046><U00F3>"       ;"<U0053><U0075><U0069>";/
             "<U004D><U01D4><U006B>";"<U0047><U00F9><U006D>";/
             "<U0054><U00F3><U0075>"
 %
 % Full weekday names (%A)
 day         "<U0053><U00F9><U006E><U0064><U0061><U0067>";/
             "<U004D><U016B><U006E><U0064><U0061><U0067>";/
-            "<U0046><U00F3><U0064><U0061><U0067>";/
+            "<U0046><U00F3>       <U0064><U0061><U0067>";/
             "<U0053><U0075><U0069><U0064><U0061><U0067>";/
             "<U004D><U01D4><U006B><U0064><U0061><U0067>";/
             "<U0047><U00F9><U006D><U0064><U0061><U0067>";/
@@ -169,7 +169,8 @@ abmon       "<U0031><U006D>";"<U0032><U006D>";/
 	    "<U0031><U0031><U006D>";"<U0031><U0032><U006D>"
 %
 % Full month names (%B)
-mon         "<U0044><U0065><U002D><U0031><U002D><U006D><U006F><U006E><U0167>";"<U0044><U0065><U002D><U0032><U002D><U006D><U006F><U006E><U0167>";/
+mon         "<U0044><U0065><U002D><U0031><U002D><U006D><U006F><U006E><U0167>";/
+            "<U0044><U0065><U002D><U0032><U002D><U006D><U006F><U006E><U0167>";/
             "<U0044><U0065><U002D><U0033><U002D><U006D><U006F><U006E><U0167>";/
             "<U0044><U0065><U002D><U0034><U002D><U006D><U006F><U006E><U0167>";/
             "<U0044><U0065><U002D><U0035><U002D><U006D><U006F><U006E><U0167>";/

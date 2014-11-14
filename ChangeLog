@@ -1,0 +1,3 @@
+2014-11-14 Tom K. C. Chiu <tomchiukc@gmail.com> 
+	Migrated package from langpack-locales to glibc
+	* Makefile (LOCALES): Add bb_BKs.UTF-8.
