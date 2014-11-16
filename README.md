@@ -10,6 +10,12 @@ In case of any problems caused other than those related to Babyish, you should r
 
   http://sourceware.org/bugzilla/
 
+Kontents-wa kopien tu folowen fouldas:
+* charmaps usr/share/i18n/
+* locales usr/share/i18n/
+* locale.alias etc/
+
+
 Si osou: 
 * https://sourceware.org/glibc/wiki/Locales
 

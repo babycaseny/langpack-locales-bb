@@ -1,0 +1,4 @@
+charmaps usr/share/i18n/
+locales usr/share/i18n/
+locale.alias etc/
+
