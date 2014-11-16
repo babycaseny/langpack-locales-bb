@@ -67,24 +67,10 @@ copy "i18n"
 
 translit_start
 include "translit_combining";""
-% Babyish umlauts.
-% LATIN CAPITAL LETTER A WITH DIAERESIS.
-<U00C4> "<U0041><U0308>";"<U0041><U0045>"
-% LATIN CAPITAL LETTER O WITH DIAERESIS.
-<U00D6> "<U004F><U0308>";"<U004F><U0045>"
-% LATIN CAPITAL LETTER U WITH DIAERESIS.
-<U00DC> "<U0055><U0308>";"<U0055><U0045>"
-% LATIN SMALL LETTER A WITH DIAERESIS.
-<U00E4> "<U0061><U0308>";"<U0061><U0065>"
-% LATIN SMALL LETTER O WITH DIAERESIS.
-<U00F6> "<U006F><U0308>";"<U006F><U0065>"
-% LATIN SMALL LETTER U WITH DIAERESIS.
-<U00FC> "<U0075><U0308>";"<U0075><U0065>"
 translit_end
 END LC_CTYPE
 
 LC_COLLATE
-define UPPERCASE_FIRST
 % Copy the template from ISO/IEC 14651
 copy "iso14651_t1"
 
@@ -159,20 +145,23 @@ LC_TIME
 % Removed trailing space, by Anthony Fok <anthony@thizlinux.com>, Feb 2002
 % Abbreviated weekday names (%a)
 % The abbreviations for the week days:
-% - Sùn, Mūn, Fó, Sui, Muk, Gùm, Tou
-abday       "<U0053><U00F9><U006E>";"<U004D><U016B><U006E>";/
-            "<U0046><U00F3>"       ;"<U0053><U0075><U0069>";/
-            "<U004D><U01D4><U006B>";"<U0047><U00F9><U006D>";/
-            "<U0054><U00F3><U0075>"
+% - Sùn, Mūn, Fó, Sui, Mǔk, Gùm, Tou
+abday   	"<U0053><U00F9><U006E>";/
+		"<U004D><U016B><U006E>";/
+         	"<U0046><U00F3>";/
+         	"<U0053><U0075><U0069>";/
+          	"<U004D><U01D4><U006B>";/
+          	"<U0047><U00F9><U006D>";/
+            	"<U0054><U00F3><U0075>"
 %
 % Full weekday names (%A)
-day         "<U0053><U00F9><U006E><U0064><U0065><U0061>";/
-            "<U004D><U016B><U006E><U0064><U0065><U0061>";/
-            "<U0046><U00F3>       <U0064><U0065><U0061>";/
-            "<U0053><U0075><U0069><U0064><U0065><U0061>";/
-            "<U004D><U01D4><U006B><U0064><U0065><U0061>";/
-            "<U0047><U00F9><U006D><U0064><U0065><U0061>";/
-            "<U0054><U00F3><U0075><U0064><U0065><U0061>"
+day         	"<U0053><U00F9><U006E><U0064><U0065><U0061>";/
+            	"<U004D><U016B><U006E><U0064><U0065><U0061>";/
+            	"<U0046><U00F3>       <U0064><U0065><U0061>";/
+            	"<U0053><U0075><U0069><U0064><U0065><U0061>";/
+            	"<U004D><U01D4><U006B><U0064><U0065><U0061>";/
+            	"<U0047><U00F9><U006D><U0064><U0065><U0061>";/
+            	"<U0054><U00F3><U0075><U0064><U0065><U0061>"
 %
 % Abbreviated month names (%b)
 abmon       "<U0031><U006D>";"<U0032><U006D>";/
@@ -183,15 +172,15 @@ abmon       "<U0031><U006D>";"<U0032><U006D>";/
 	    "<U0031><U0031><U006D>";"<U0031><U0032><U006D>"
 %
 % Full month names (%B)
-mon         "<U0044><U0065><U002D>       <U0031><U002D><U006D><U006F><U006E><U0167>";/
-            "<U0044><U0065><U002D>       <U0032><U002D><U006D><U006F><U006E><U0167>";/
-            "<U0044><U0065><U002D>       <U0033><U002D><U006D><U006F><U006E><U0167>";/
-            "<U0044><U0065><U002D>       <U0034><U002D><U006D><U006F><U006E><U0167>";/
-            "<U0044><U0065><U002D>       <U0035><U002D><U006D><U006F><U006E><U0167>";/
-            "<U0044><U0065><U002D>       <U0036><U002D><U006D><U006F><U006E><U0167>";/
-            "<U0044><U0065><U002D>       <U0037><U002D><U006D><U006F><U006E><U0167>";/
-            "<U0044><U0065><U002D>       <U0038><U002D><U006D><U006F><U006E><U0167>";/
-            "<U0044><U0065><U002D>       <U0039><U002D><U006D><U006F><U006E><U0167>";/
+mon         "<U0044><U0065><U002D>	 <U0031><U002D><U006D><U006F><U006E><U0167>";/
+            "<U0044><U0065><U002D>	 <U0032><U002D><U006D><U006F><U006E><U0167>";/
+            "<U0044><U0065><U002D>	 <U0033><U002D><U006D><U006F><U006E><U0167>";/
+            "<U0044><U0065><U002D>	 <U0034><U002D><U006D><U006F><U006E><U0167>";/
+            "<U0044><U0065><U002D>	 <U0035><U002D><U006D><U006F><U006E><U0167>";/
+            "<U0044><U0065><U002D>	 <U0036><U002D><U006D><U006F><U006E><U0167>";/
+            "<U0044><U0065><U002D>	 <U0037><U002D><U006D><U006F><U006E><U0167>";/
+            "<U0044><U0065><U002D>	 <U0038><U002D><U006D><U006F><U006E><U0167>";/
+            "<U0044><U0065><U002D>	 <U0039><U002D><U006D><U006F><U006E><U0167>";/
             "<U0044><U0065><U002D><U0031><U0030><U002D><U006D><U006F><U006E><U0167>";/
             "<U0044><U0065><U002D><U0031><U0031><U002D><U006D><U006F><U006E><U0167>";/
             "<U0044><U0065><U002D><U0031><U0032><U002D><U006D><U006F><U006E><U0167>"
@@ -236,10 +225,14 @@ t_fmt_ampm  ""
 % %S - seconds as a decimal number (00 to 59),
 % %Z - time-zone name,
 date_fmt  /
-"<U0025><U0059><U002D><U0025><U006D><U002D><U0025><U0064><U0020>/
-<U0028><U0025><U0061><U0029>/
-<U0020><U0025><U0048><U003A><U0025><U004D><U003A><U0025><U0053>/
-<U0020><U0025><U005A>"
+"<U0025><U0059><U002D>/
+<U0025><U006D><U002D>
+<U0025><U0064><U0020>/
+<U0028><U0025><U0061><U0029><U0020>/
+<U0025><U0048><U003A>/
+<U0025><U004D><U003A>/
+<U0025><U0053><U0020>/
+<U0025><U005A>"
 %
 %  FIXME
 first_weekday 1 % Start from Sùn
@@ -271,7 +264,7 @@ LC_NAME
 % This is the ISO_IEC TR14652 Locale definition for the
 % LC_NAME category.
 %
-name_fmt    "<U0025><U0066><U0025><U0074><U0025><U0064><U0031>"
+name_fmt    "<U0025><U0066><U0025><U0074><U0025><U0064><U0031>" % %f%t%d
 name_gen    "<U541B>"
 name_mr     "<U5148><U751F>"
 name_mrs    "<U592B><U4EBA><U002E>"
