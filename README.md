@@ -24,3 +24,4 @@ Leitest ùpdeit:
 
 Locales definition files and formats:
 * http://www.hungry.com/~pere/linux/glibc/
+* http://man7.org/linux/man-pages/man5/locale.5.html
