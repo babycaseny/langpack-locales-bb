@@ -1,5 +1,5 @@
 default  partial
-xkb_symbols "bb" {
+xkb_symbols "bk" {
     name[Group1] = "Babyish";
 
     key <TLDE>	{ [ numbersign,       bar,     backslash ]	};

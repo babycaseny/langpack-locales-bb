@@ -51,8 +51,8 @@ reorder-after <c>
 
 % ç/Ç is treated like s/S but is sorted after the latter
 reorder-after <s>
-<UOOE8> <s>;<cedila>;<MIN>;IGNORE % c,
-<U00C8> <s>;<cedila>;<CAP>;IGNORE % C,
+<U00E8> <s>;<CED>;<MIN>;IGNORE % ç
+<U00C8> <s>;<CED>;<CAP>;IGNORE % Ç
 % but before <sh>
 <sh>
 <sr>
