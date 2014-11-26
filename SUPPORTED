@@ -1,3 +1,5 @@
+# This file names the currently supported and somewhat tested locales.
+# If you have any additions please file a glibc bug report.
 SUPPORTED-LOCALES=\
 aa_DJ.UTF-8/UTF-8 \
 aa_DJ/ISO-8859-1 \
@@ -432,6 +434,7 @@ uz_UZ.UTF-8/UTF-8 \
 uz_UZ/ISO-8859-1 \
 uz_UZ@cyrillic/UTF-8 \
 ve_ZA/UTF-8 \
+vi_VN.TCVN/TCVN5712-1 \
 vi_VN/UTF-8 \
 wa_BE/ISO-8859-1 \
 wa_BE@euro/ISO-8859-15 \

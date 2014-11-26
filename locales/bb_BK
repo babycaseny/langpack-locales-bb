@@ -8,6 +8,8 @@ comment_char    %
 % Email: babycaseny@gmail.com
 % Tel: +852 9243-2512
 % Fax: --
+% Filename: bb_BK
+% Locale name: bb_BK.UTF-8
 % Language: bb
 % Territory: BK
 % Revision: 0.2
@@ -23,6 +25,7 @@ comment_char    %
 % ChangeLog
 % 0.x (2014-11-14):
 % migrate to github
+% 0.x (2009-06-17):
 % 0.2 (2009-04-01):
 %     2009-04-01 Tom K. C. Chiu <babycaseny@gmail.com>
 %       - correction of collating sequence
@@ -284,7 +287,6 @@ END LC_TIME
 LC_MESSAGES
 % yes: Mi
 % no: Non
-yesstr    "<U005E>"
 % yesexpr     "^[<m><M>]"
 % noexpr      "^[<n><N>]"
 yesexpr     "<U005E><U005B><U006D><U004D><U005D>"
