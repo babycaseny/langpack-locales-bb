@@ -73,7 +73,7 @@ msgstr "NEIM"
 
 #: argp/argp-parse.c:104
 msgid "Set the program name"
-msgstr "Sätt progrem neim"
+msgstr "Set progrem neim"
 
 #: argp/argp-parse.c:105
 msgid "SECS"
@@ -85,11 +85,11 @@ msgstr "Vänta i SEK sekunder (standardvärde 3600)"
 
 #: argp/argp-parse.c:167
 msgid "Print program version"
-msgstr "Skriv progrem vorçion"
+msgstr "Print progrem vorçion"
 
 #: argp/argp-parse.c:183
 msgid "(PROGRAM ERROR) No version known!?"
-msgstr "(PROGRAMFEL) Ingen version känd!?"
+msgstr "(PROGREMORA) Mwu wagari vorçion!?"
 
 #: argp/argp-parse.c:623
 #, c-format
@@ -139,8 +139,8 @@ msgid ""
 "-o OUTPUT-FILE [INPUT-FILE]...\n"
 "[OUTPUT-FILE [INPUT-FILE]...]"
 msgstr ""
-"-o UTFIL [INFIL]...\n"
-"[UTFIL [INFIL]...]"
+"-o OUTFAYL [INFAYL]...\n"
+"[OUTFAYL [INFAYL]...]"
 
 #: catgets/gencat.c:229 debug/pcprofiledump.c:209 elf/ldconfig.c:307
 #: elf/pldd.c:244 elf/sln.c:85 elf/sprof.c:372 iconv/iconv_prog.c:408
@@ -184,7 +184,7 @@ msgstr ""
 #: posix/getconf.c:1108
 #, c-format
 msgid "Written by %s.\n"
-msgstr "Skrivet av %s.\n"
+msgstr "Wraiten bai %s.\n"
 
 #: catgets/gencat.c:281
 msgid "*standard input*"
@@ -406,7 +406,7 @@ msgstr "minnesmappning av cache-fil misslyckades.\n"
 #: elf/cache.c:175 elf/cache.c:189
 #, c-format
 msgid "File is not a cache file.\n"
-msgstr "Filen är inte en cache-fil.\n"
+msgstr "Fayl-wa not du cache-fayl.\n"
 
 #: elf/cache.c:222 elf/cache.c:232
 #, c-format

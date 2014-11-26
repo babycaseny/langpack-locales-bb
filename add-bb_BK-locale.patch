@@ -40,92 +40,140 @@ diff -Nru langpack-locales.orig/debian/patches/ubuntu-ckb_IQ-new_locale.patch la
 ++comment_char %
 ++%
 ++% Babyish language locale for Babycasèny:
+++% Source: Babyish Standards Association
+++% Address: Ist Steibol
 ++% Contact: Tom K. C. Chiu 
-++% eMail:   tomchiukc@gmail.com>
+++% Email: babycaseny@gmail.com
+++% Tel: +852 9243-2512
+++% Fax: --
 ++% Filename: bb_BK
 ++% Locale name: bb_BK.UTF-8
-++% Language: Babyish
-++% Language abbrieviation: bb
-++% Charset: UTF-8
-++% Creation Date: 2009-06-17
-++% History:
-++% June 2009: Defining bb locale
+++% Language: bb
+++% Territory: BK
+++% Revision: 0.2
+++% Date: 2009-04-01
+++% Application: general
+++% Users: general
+++% Distribution and use is free, also
+++% for commercial purposes.
 ++
+++% Charset: UTF-8
+++%% Charset: BASKII
+++
+++% ChangeLog
+++% 0.x (2014-11-14):
+++% migrate to github
+++% 0.x (2009-06-17):
+++% 0.2 (2009-04-01):
+++%     2009-04-01 Tom K. C. Chiu <babycaseny@gmail.com>
+++%       - correction of collating sequence
+++% 0.1 (2008-11-15):
+++%    - Initial Babyish locale by Tom K. C. Chiu
+++% Corrections by:
+++%   
+++% The contents of this file shall follow the same sequence 
+++% as listed in glibc/locale/langinfo.h
+++%
+++% This requirement is not mandatory, but it helps to check
+++% if anything is missing or in wrong sequence.
+++%
 ++LC_IDENTIFICATION
-++title      "Babyish locale"
-++source     "Babycaseny Government"
+++title      "Babyish locale for Babycaseny"
+++source     "Babyish Standards Association"
 ++address    "Ist Steibol"
 ++contact    "Tom K. C. Chiu"
-++email      "tomchiukc@gmail.com"
-++tel        ""
+++email      "babycaseny@gmail.com"
+++tel        "+852 9243-2512"
 ++fax        ""
 ++language   "Babyish"
 ++territory  "Babycasèny, Hong Kong, Canada"
-++revision   "0.8"
-++date	   "2014-09-20"
-++
-++category  "ckb_IQ:2000";LC_IDENTIFICATION
-++category  "ckb_IQ:2000";LC_CTYPE
-++category  "ckb_IQ:2000";LC_COLLATE
-++category  "ckb_IQ:2000";LC_MONETARY
-++category  "ckb_IQ:2000";LC_NUMERIC
-++category  "ckb_IQ:2000";LC_TIME
-++category  "ckb_IQ:2000";LC_MESSAGES
-++category  "ckb_IQ:2000";LC_PAPER
-++category  "ckb_IQ:2000";LC_NAME
-++category  "ckb_IQ:2000";LC_ADDRESS
-++category  "ckb_IQ:2000";LC_TELEPHONE
-++category  "ckb_IQ:2000";LC_MEASUREMENT
+++revision   "1.0"
+++date       "2000-07-20"
+++audience   ""
+++application ""
+++abbreviation ""
+++%
+++category  "bb_BK:2000";LC_IDENTIFICATION
+++category  "bb_BK:2000";LC_CTYPE
+++category  "bb_BK:2000";LC_COLLATE
+++category  "bb_BK:2000";LC_MONETARY
+++category  "bb_BK:2000";LC_NUMERIC
+++category  "bb_BK:2000";LC_TIME
+++category  "bb_BK:2000";LC_MESSAGES
+++category  "bb_BK:2000";LC_PAPER
+++category  "bb_BK:2000";LC_NAME
+++category  "bb_BK:2000";LC_ADDRESS
+++category  "bb_BK:2000";LC_TELEPHONE
+++category  "bb_BK:2000";LC_MEASUREMENT
 ++
 ++END LC_IDENTIFICATION
 ++
 ++LC_CTYPE
 ++copy "i18n"
+++
+++translit_start
+++include "translit_combining";""
+++translit_end
 ++END LC_CTYPE
+++
+++LC_COLLATE
 ++
 ++
 ++LC_MONETARY
-++int_curr_symbol       "<U0049><U0051><U0044><U0020>"
-++currency_symbol       "<U062F><U002E><U0639><U002E>"
-++mon_decimal_point     "<U002E>"
-++mon_thousands_sep     "<U002C>"
-++mon_grouping	      3
-++positive_sign	      ""
+++% This is the POSIX Locale definition the LC_MONETARY category.
+++% These are generated based on XML base Locale difintion file
+++% for IBM Class for Unicode/Java
+++%
+++int_curr_symbol		"<U0042><U004B><U004B><U0020>"
+++currency_symbol		"<U004B><U010D>"
+++mon_decimal_point       "<U002E>"
+++mon_thousands_sep	"<U00A0>"
+++mon_grouping      	3;3
+++positive_sign		""
+++
+++% "-"
 ++negative_sign	      "<U002D>"
-++int_frac_digits       3
-++frac_digits	          3
-++p_cs_precedes	      1
-++p_sep_by_space	      1
-++n_cs_precedes	      1
-++n_sep_by_space	      1
-++p_sign_posn	          1
-++n_sign_posn	          2
+++int_frac_digits       2
+++frac_digits           2
+++p_cs_precedes         0
+++p_sep_by_space        1
+++n_cs_precedes         0
+++n_sep_by_space        1
+++p_sign_posn           1
+++n_sign_posn           1
 ++
 ++END LC_MONETARY
 ++
 ++
 ++LC_NUMERIC
 ++% This is the POSIX Locale definition for the LC_NUMERIC  category.
+++% "."
 ++decimal_point	       "<U002E>"
-++thousands_sep	       "<U002C>"
-++grouping	       3
+++% non-breaking space
+++thousands_sep	       "<U00A0>"
+++grouping              3;3
+++
 ++END LC_NUMERIC
 ++
 ++
 ++LC_TIME
 ++% This is the POSIX Locale definition for the LC_TIME category.
 ++% These are generated based on XML base Locale difintion file
+++% for IBM Class for Unicode/Java
 ++%
-++% Abbreviated weekday names
-++abday	"<U06CC><U06D5><U0626><U0634>";/
-++		"<U062F><U0648><U0648><U0634>";/
-++	    "<U0633><U0626><U0634>";/
-++		"<U0686><U0648><U0631><U0634>";/
-++	    "<U067E><U0626><U0634>";/
-++		"<U0647><U0647>";/
-++	    "<U0634><U06D5><U0645>"	
+++% Removed trailing space, by Anthony Fok <anthony@thizlinux.com>, Feb 2002
+++% Abbreviated weekday names (%a)
+++% The abbreviations for the week days:
+++% - Sùn, Mūn, Fó, Sui, Mǔk, Gùm, Tou
+++abday   	"<U0053><U00F9><U006E>";/
+++		"<U004D><U016B><U006E>";/
+++         	"<U0046><U00F3>";/
+++         	"<U0053><U0075><U0069>";/
+++          	"<U004D><U01D4><U006B>";/
+++          	"<U0047><U00F9><U006D>";/
+++            	"<U0054><U00F3><U0075>"
 ++%
-++% Full weekday names 
+++% Full weekday names (%A)
 ++day	    "<U06CC><U06D5><U0643><U0634><U06D5><U0645><U0645><U06D5>";/
 ++		"<U062F><U0648><U0648><U0634><U06D5><U0645><U0645><U06D5>";/
 ++		"<U0633><U06CE><U0634><U06D5><U0645><U0645><U06D5>";/
