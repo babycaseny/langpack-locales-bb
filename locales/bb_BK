@@ -14,12 +14,11 @@ comment_char    %
 % Date: 2009-04-01
 % Application: general
 % Users: general
-% Repertoiremap: mnemonic.ds
-% Charset: BASKII
 % Distribution and use is free, also
 % for commercial purposes.
 
 % Charset: UTF-8
+%% Charset: BASKII
 
 % ChangeLog
 % 0.x (2014-11-14):
@@ -77,75 +76,27 @@ translit_end
 END LC_CTYPE
 
 LC_COLLATE
-% Babyish collation scheme
-% Kontent kopi from sv_SE
 
-% Characters list:
+% The latin babyish alphabet is:
 % A a	Ä ä	B b	Ç ç	C c	Č č	Ĉ ĉ	D d	Đ đ	E e	F f	
 % G g	Gĥ gĥ	H h	Ĥ ĥ	I i	J j	K k	Kĥ kĥ	L l	M m	N n	Ŋ ŋ	
 % O o	Ö ö	P p	Q q	R r	Ř ř	Rĥ rĥ	S s	Š š	Ŝ ŝ	T t	
 % Ŧ ŧ	U u	Ü ü	V v	W w	X x	Y y	Z z	Ž ž	Ẑ ẑ	 
 
-% Kontents from iso14651_t1 ikskluden.  Riför bai riförèns
 copy "iso14651_t1"
 
-collating-element <A-A> from "<U0041><U0041>"
-collating-element <A-a> from "<U0041><U0061>"
-collating-element <a-A> from "<U0061><U0041>"
-collating-element <a-a> from "<U0061><U0061>"
-collating-symbol <CAP-MIN>
-collating-symbol <MIN-CAP>
-% extra Vowels
-collating-symbol <aumlaut>
-collating-symbol <oumlaut>
-collating-symbol <uumlaut>
+collating-symbol <a:>
+collating-symbol <c,>
+collating-symbol <h>>
+collating-symbol <o:>
+collating-symbol <u:>
 
-% reordering start
-% Sort ä after a, ö after o, ü after u
-reorder-after <U0041> % A
-<aumlaut>
-reorder-after <o>
-<oumlaut>
-reorder-after <U0055> % U
-<uumlaut>
+% Convert unrepresentable elements into "collating-element".
+% Contents copied from nam_TW@latin
 
-% Consonants
+collating-element <Kr> from "<U004B><U010D>" % Krone
 
-% order_start forward;forward;forward;forward
-% <char> letter;accent;case;specials
-
-reorder-after <U00E3>
-<U00E4> <ae>;<REU>;<MIN>;IGNORE % ä
-<U00E5> <aring>;<RNE>;<MIN>;IGNORE % å
-<U00E6> <ae>;<LIG>;<MIN>;IGNORE % æ
-reorder-after <U00F5>
-<U00F6> <oumlaut>;<REU>;<MIN>;IGNORE % ö
-<U00F8> <oslash>;<OBL>;<MIN>;IGNORE % ø
-
-reorder-after <U00C3>
-<U00C4> <ae>;<REU>;<CAP>;IGNORE % Ä
-<U00C5> <aring>;<RNE>;<CAP>;IGNORE % Å
-<U00C6> <ae>;<LIG>;<CAP>;IGNORE % Æ
-reorder-after <U00D5>
-<U00D6> <oumlaut>;<REU>;<CAP>;IGNORE % Ö
-<U00D8> <oslash>;<OBL>;<CAP>;IGNORE % Ø
-
-reorder-after <c>
-<ch>
-<cr>
-
-% ç/Ç is treated like s/S but is sorted after the latter
-reorder-after <s>
-<U00E8> <s>;<CED>;<MIN>;IGNORE % ç
-<U00C8> <s>;<CED>;<CAP>;IGNORE % Ç
-% but before <sh>
-<sh>
-<sr>
-
-reorder-after <z>
-<zh>
-<zr>
-
+% reordering
 reorder-after <BAS>
 <MAC>	% macron
 <ACA>	% acute
@@ -153,15 +104,39 @@ reorder-after <BAS>
 <GRA>	% grave
 
 %
+reorder-after <a>
+<a:>
+<b>
+<c-cedilla> 
+<c<>
+<c\>>
+reorder-after <h>
+<h>>
+eorder-after <o>
+<o:>
+reorder-after <u>
+<u:>
+%
 reorder-after <U0061> % a
-<U00E4> <aumlaut>;<BAS>;<MIN>;IGNORE % 204 ä
-<U01DF> <aumlaut>;<MAC>;<MIN>;IGNORE % 210 ǟ
-%
+<U00E4> <a:>;<BAS>;<MIN>;IGNORE % 204 ä
+<U01DF> <a:>;<MAC>;<MIN>;IGNORE % 210 ǟ
 reorder-after <U0041> % A
-<U00C4> <aumlaut>;<BAS>;<CAP>;IGNORE % 522 Ä
-<U01DE> <aumlaut>;<MAC>;<CAP>;IGNORE % 528 Ǟ
-%
+<U00C4> <a:>;<BAS>;<CAP>;IGNORE % 522 Ä
+<U01DE> <a:>;<MAC>;<CAP>;IGNORE % 528 Ǟ
+reorder-after <U0073> % s
+<U00E7> <s>;<CDI>;<MIN>;IGNORE % 207 ç considered as s
+reorder-after <U0053> % S
+<U00C7> <s>;<CDI>;<CAP>;IGNORE % Ç considered as s
+reorder-after <U006F>
+<U00F6> <o:>;<BAS>;<MIN>;IGNORE
+reorder-after <U004F>
+<U00D6> <o:>;<BAS>;<CAP>;IGNORE
+reorder-after <U0075>
+<U00FC> <u:>;<BAS>;<MIN>;IGNORE
+reorder-after <U0055>
+<U00DC> <u:>;<BAS>;<CAP>;IGNORE
 reorder-end
+%
 END LC_COLLATE
 
 LC_MONETARY
@@ -267,7 +242,9 @@ d_fmt       "<U0025><U0059><U002D><U0025><U006D><U002D><U0025><U0064>"
 %
 % Time representation to be referenced by the "%X" field descriptor -
 % "%T" (24-hour clock time in format HH:MM:SS)
-t_fmt       "<U0025><U0054>"
+t_fmt       "<U0025><U0054>" % %T
+% Swedish format: %H:%M:%S
+% t_fmt     "<U0025><U0048><U003A><U0025><U004D><U003A><U0025><U0053>" % Swedish
 
 % Define representation of ante meridiem and post meridiem strings -
 % The "" mean default to "AM" and "PM".

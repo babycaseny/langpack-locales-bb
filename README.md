@@ -11,8 +11,8 @@ In case of any problems caused other than those related to Babyish, you should r
   http://sourceware.org/bugzilla/
 
 Kontents-wa kopien tu folowen fouldas:
-* charmaps usr/share/i18n/
-* locales usr/share/i18n/
+* charmaps usr/share/i18n/charmaps
+* locales usr/share/i18n/locales
 * locale.alias etc/
 
 
