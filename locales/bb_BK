@@ -8,8 +8,6 @@ comment_char    %
 % Email: babycaseny@gmail.com
 % Tel: +852 9243-2512
 % Fax: --
-% Filename: bb_BK
-% Locale name: bb_BK.UTF-8
 % Language: bb
 % Territory: BK
 % Revision: 0.2
@@ -25,7 +23,6 @@ comment_char    %
 % ChangeLog
 % 0.x (2014-11-14):
 % migrate to github
-% 0.x (2009-06-17):
 % 0.2 (2009-04-01):
 %     2009-04-01 Tom K. C. Chiu <babycaseny@gmail.com>
 %       - correction of collating sequence
@@ -90,6 +87,9 @@ copy "iso14651_t1"
 
 collating-symbol <a:>
 collating-symbol <c,>
+collating-symbol <c<>
+collating-symbol <c\>>
+collating-symbol <c,>
 collating-symbol <h>>
 collating-symbol <o:>
 collating-symbol <u:>
@@ -117,8 +117,14 @@ reorder-after <h>
 <h>>
 eorder-after <o>
 <o:>
+reorder-after <s>
+<s<>
+<s\>>
 reorder-after <u>
 <u:>
+reorder-after <z>
+<z<>
+<z\>>
 %
 reorder-after <U0061> % a
 <U00E4> <a:>;<BAS>;<MIN>;IGNORE % 204 ä
@@ -206,18 +212,12 @@ day         	"<U0053><U00F9><U006E><U0064><U0065><U0069>";/
             	"<U0054><U00F3><U0075><U0064><U0065><U0069>"
 %
 % Abbreviated month names (%b)
-abmon       "<U0031><U006D>";/
-            "<U0032><U006D>";/
-            "<U0033><U006D>";/
-	    "<U0034><U006D>";/
-            "<U0035><U006D>";/
-	    "<U0036><U006D>";/
-            "<U0037><U006D>";/
-	    "<U0038><U006D>";/
-	    "<U0039><U006D>";/
-	    "<U0031><U0030><U006D>";/
-	    "<U0031><U0031><U006D>";/
-	    "<U0031><U0032><U006D>"
+abmon       "<U0031><U006D>";"<U0032><U006D>";/
+            "<U0033><U006D>";"<U0034><U006D>";/
+            "<U0035><U006D>";"<U0036><U006D>";/
+            "<U0037><U006D>";"<U0038><U006D>";/
+	    "<U0039><U006D>";"<U0031><U0030><U006D>";/
+	    "<U0031><U0031><U006D>";"<U0031><U0032><U006D>"
 %
 % Full month names (%B)
 mon         "<U0044><U0065><U002D>	 <U0031><U002D><U006D><U006F><U006E><U0167>";/
@@ -284,7 +284,7 @@ date_fmt  /
 <U0025><U0053><U0020>/
 <U0025><U005A>"
 %
-%  FIXME
+%
 first_weekday 1 % Start from Sùn
 first_workday 2 % Work start from Mun
 END LC_TIME
@@ -293,6 +293,8 @@ END LC_TIME
 LC_MESSAGES
 % yes: Mi
 % no: Non
+yesstr    "<U004D><U0069>"
+nostr     "<U004E><U006F><U006E>"
 % yesexpr     "^[<m><M>]"
 % noexpr      "^[<n><N>]"
 yesexpr     "<U005E><U005B><U006D><U004D><U005D>"
@@ -309,11 +311,29 @@ width       210
 END LC_PAPER
 
 
+LC_TELEPHONE
+% tel_int_fmt:  "+%c-%a-%l"
+tel_int_fmt	"<U002B><U0025><U0063><U002D><U0025><U0061>/
+<U002D><U0025><U006C>"
+
+% tel_dom_fmt:  "%A-%l"
+tel_dom_fmt	"<U0025><U0041><U002D><U0025><U006C>"
+
+% int_select:   "00"
+int_select	"<U0030><U0030>"
+
+% int_prefix:   "886"
+int_prefix	"<U0038><U0038><U0036>"
+END LC_TELEPHONE
+
 LC_NAME
 % This is the ISO_IEC TR14652 Locale definition for the
 % LC_NAME category.
 %
-name_fmt    "<U0025><U0066><U0025><U0074><U0025><U0064><U0031>" % %f%t%d
+% name_fmt:	"%f%t%g%t%d"
+name_fmt	"<U0025><U0066><U0025><U0074><U0025><U0067><U0025><U0074>/
+<U0025><U0064>"
+
 name_gen    "<U541B>"
 name_mr     "<U5148><U751F>"
 name_mrs    "<U592B><U4EBA><U002E>"
@@ -324,29 +344,35 @@ END LC_NAME
 
 
 LC_ADDRESS
-% This is the ISO_IEC TR14652 Locale definition for the
-% LC_ADDRESS
-postal_fmt  "<U0025><U007A><U0025><U0063><U0025><U0054><U0025><U0073>/
-<U0025><U0062><U0025><U0065><U0025><U0072>"
-% "BK"
+% postal_fmt:	"%c%N%T%N%s %h %e %r%N%b%N%d%N%f%N%a%N"
+postal_fmt	"<U0025><U0063><U0025><U004E><U0025>/
+<U0054><U0025><U004E><U0025><U0073><U0020><U0025><U0068><U0020><U0025>/
+<U0065><U0020><U0025><U0072><U0025><U004E><U0025><U0062><U0025><U004E>/
+<U0025><U0064><U0025><U004E><U0025><U0066><U0025><U004E><U0025><U0061>/
+<U0025><U004E>"
+
+% Reference:	http://www.un.org/Depts/unsd/methods/m49alpha.htm
+%		http://www.isbn.spk-berlin.de/html/prefix.htm
+% country_ab2:	BK
+% country_ab3:	BAB
+% country_isbn:	978 % http://babyish.wikia.com/wiki/Babyish_p%C3%B9blikei%C3%A7ion
+country_name	"Babycasèny"
+%country_post	"FIXME"
 country_ab2 "<U0042><U004B>"
-% "BAB"
 country_ab3 "<U0042><U0041><U0042>"
 country_num 344
-% "BK"
-country_car   "<U0042><U004B>"
-%country_isbn  ???
+country_car   "<U0042><U004B>" % "BK"
+country_isbn	978
+
+% Reference:	http://lcweb.loc.gov/standards/iso639-2/langhome.html
+% lang_ab:	bb
+% lang_term:	bab
+% lang_lib:	bab
+lang_name	"<U0042><U0061><U0062><U0079><U0069><U0074><U0068>"
+lang_ab		"<U0062><U0062>"
+lang_term	"<U0062><U0061><U0062>"
+lang_lib	"<U0062><U0061><U0062>"
 END LC_ADDRESS
-
-
-LC_TELEPHONE
-% This is the ISO_IEC TR14652 Locale definition for the
-%
-tel_int_fmt "<U002B><U0025><U0063><U0020><U003B><U0025><U0061><U0020>/
-<U003B><U0025><U006C>"
-int_prefix  "<U0038><U0035><U0032>"
-int_select  "<U0030><U0030><U0031>"
-END LC_TELEPHONE
 
 
 LC_MEASUREMENT
