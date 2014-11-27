@@ -98,7 +98,6 @@ collating-symbol <u:>
 % Contents copied from nam_TW@latin
 
 collating-element <Kr> from "<U004B><U010D>" % Krone
-
 % reordering
 reorder-after <BAS>
 <MAC>	% macron
@@ -144,6 +143,10 @@ reorder-after <U0075>
 <U00FC> <u:>;<BAS>;<MIN>;IGNORE
 reorder-after <U0055>
 <U00DC> <u:>;<BAS>;<CAP>;IGNORE
+%
+reorder-after <U20BD> % Last currency symbol: New Russia Ruble Sign
+<Kr>
+
 reorder-end
 %
 END LC_COLLATE
@@ -160,17 +163,21 @@ mon_thousands_sep	"<U00A0>"
 mon_grouping      	3;3
 positive_sign		""
 
-% "-"
-negative_sign		"<U002D>"
+negative_sign		"<U002D>" % "-"
 int_frac_digits		2
 frac_digits		2
 p_cs_precedes		0
 p_sep_by_space		1
 n_cs_precedes		0
 n_sep_by_space		1
+int_p_cs_precedes       1
+int_p_sep_by_space      0
+int_n_cs_precedes       1
+int_n_sep_by_space      0
 p_sign_posn		1
 n_sign_posn		1
-
+int_p_sign_posn         1
+int_n_sign_posn         1
 END LC_MONETARY
 
 
