@@ -105,7 +105,7 @@ collating-symbol <z/>>
 % Convert unrepresentable elements into "collating-element".
 % Contents copied from nam_TW@latin
 
-collating-element <Kr> from "<U004B><U010D>" % Krone
+collating-element <Kr> from "<U004B><U010D><U0020>" % Krone
 
 % reordering
 reorder-after <BAS>
