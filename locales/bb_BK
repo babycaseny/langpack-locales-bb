@@ -88,11 +88,14 @@ copy "iso14651_t1"
 collating-symbol <a:>
 collating-symbol <c,>
 collating-symbol <c<>
-collating-symbol <c\>>
-collating-symbol <c,>
+collating-symbol <c>>
 collating-symbol <h>>
 collating-symbol <o:>
+collating-symbol <s<>
+collating-symbol <s>>
 collating-symbol <u:>
+collating-symbol <z<>
+collating-symbol <z>>
 
 % Convert unrepresentable elements into "collating-element".
 % Contents copied from nam_TW@latin
@@ -111,19 +114,19 @@ reorder-after <a>
 <b>
 <c-cedilla> 
 <c<>
-<c\>>
+<c>>
 reorder-after <h>
 <h>>
 eorder-after <o>
 <o:>
 reorder-after <s>
 <s<>
-<s\>>
+<s>>
 reorder-after <u>
 <u:>
 reorder-after <z>
 <z<>
-<z\>>
+<z>>
 %
 reorder-after <U0061> % a
 <U00E4> <a:>;<BAS>;<MIN>;IGNORE % 204 ä
