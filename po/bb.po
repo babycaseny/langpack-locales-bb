@@ -98,12 +98,12 @@ msgstr "%s: För många argument\n"
 
 #: argp/argp-parse.c:766
 msgid "(PROGRAM ERROR) Option should have been recognized!?"
-msgstr "(PROGRAMFEL) Flagga skulle känts igen!?"
+msgstr "(PROGREMORA) Opcion skulle känts igen!?"
 
 #: assert/assert-perr.c:35
 #, c-format
 msgid "%s%s%s:%u: %s%sUnexpected error: %s.\n"
-msgstr "%s%s%s:%u: %s%sOväntat fel: %s.\n"
+msgstr "%s%s%s:%u: %s%s Mi-ikspekten ora: %s.\n"
 
 #: assert/assert.c:101
 #, c-format
@@ -111,7 +111,7 @@ msgid ""
 "%s%s%s:%u: %s%sAssertion `%s' failed.\n"
 "%n"
 msgstr ""
-"%s%s%s:%u: %s%sFörsäkran \"%s\" falsk.\n"
+"%s%s%s:%u: %s%sFörsäkran \"%s\" ora.\n"
 "%n"
 
 #: catgets/gencat.c:110
@@ -124,7 +124,7 @@ msgstr "Använd inte existerande katalog, gör en ny utfil"
 
 #: catgets/gencat.c:113 nss/makedb.c:120
 msgid "Write output to file NAME"
-msgstr "Skriv resultatet till NAMN"
+msgstr "Wrait output tu fayl NEIM"
 
 #: catgets/gencat.c:118
 msgid ""
