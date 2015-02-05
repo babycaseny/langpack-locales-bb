@@ -17,7 +17,7 @@ msgstr ""
 #: argp/argp-help.c:227
 #, c-format
 msgid "%.*s: ARGP_HELP_FMT parameter requires a value"
-msgstr "%.*s: parameter till ARGP_HELP_FMT kräver ett värde"
+msgstr "%.*s: parameter für ARGP_HELP_FMT rikwair välyu sùpplaien"
 
 #: argp/argp-help.c:237
 #, c-format
