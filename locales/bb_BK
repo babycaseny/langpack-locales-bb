@@ -288,7 +288,7 @@ t_fmt       "<U0025><U0054>" % %T
 
 % Define representation of ante meridiem and post meridiem strings -
 % The "" mean default to "AM" and "PM".
-am_pm       "";""
+am_pm       "BN";"AN"
 
 % Define time representation in 12-hour format with "am_pm", to be referenced by the "%r"
 % The "" means that this format is not supported.
