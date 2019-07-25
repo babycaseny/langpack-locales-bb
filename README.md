@@ -8,7 +8,7 @@ Babyish locale fayls
 
 In case of any problems caused other than those related to Babyish, you should report them to:
 
-  http://sourceware.org/bugzilla/
+* http://sourceware.org/bugzilla/
 
 Kontents-wa kopien tu folowen fouldas:
 * charmaps usr/share/i18n/charmaps
